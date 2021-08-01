@@ -1,0 +1,8 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "User", function () {
+  return User;
+});
+var _Model = require("./Model");
+const rootUrl = "http://localhost:3000/users";
+class User extends _Model.Model {}

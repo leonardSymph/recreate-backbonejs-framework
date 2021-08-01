@@ -1,0 +1,4 @@
+var _viewsUserForm = require("./views/UserForm");
+const rootElement = document.getElementById("root");
+const userForm = new _viewsUserForm.UserForm(rootElement);
+userForm.render();

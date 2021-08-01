@@ -1,0 +1,6 @@
+var _modelsUser = require("./models/User");
+const collection = _modelsUser.User.buildUserCollection();
+collection.events.on("change", () => {
+  console.log(collection.models);
+});
+collection.fetch();

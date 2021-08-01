@@ -1,0 +1,13 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "User", function () {
+  return User;
+});
+class User {
+  constructor(data) {
+    this.data = data;
+  }
+  get(propName) {
+    return this.data[propName];
+  }
+}

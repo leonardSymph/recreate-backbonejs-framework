@@ -1,0 +1,6 @@
+var _modelsCollection = require("./models/Collection");
+const collection = new _modelsCollection.Collection("http://localhost:3000/users", UserProps => {});
+collection.events.on("change", () => {
+  console.log(collection);
+});
+collection.fetch();

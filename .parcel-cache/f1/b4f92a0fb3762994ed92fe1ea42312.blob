@@ -1,0 +1,29 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "User", function () {
+  return User;
+});
+var _Eventing = require("./Eventing");
+var _Sync = require("./Sync");
+var _Attributes = require("./Attributes");
+const rootUrl = "http://localhost:3000/users";
+class User {
+  events = new _Eventing.Eventing();
+  sync = new _Sync.Sync(rootUrl);
+  constructor(attrs) {
+    this.attributes = new _Attributes.Attributes(attrs);
+  }
+  get on() {
+    return this.events.on.bind(this.events);
+  }
+  get trigger() {
+    return this.events.trigger.bind(this.events);
+  }
+  get get() {
+    return this.attributes.get.bind(this.attributes);
+  }
+  set(update) {
+    this.attributes.set(update);
+    this.events.trigger("change");
+  }
+}

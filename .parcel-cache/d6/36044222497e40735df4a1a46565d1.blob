@@ -1,0 +1,8 @@
+var _modelsUser = require("./models/User");
+const user = _modelsUser.User.buildUser({
+  id: 2
+});
+user.on("change", () => {
+  console.log(user);
+});
+user.fetch();

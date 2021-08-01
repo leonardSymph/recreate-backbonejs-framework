@@ -1,0 +1,12 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "User", function () {
+  return User;
+});
+var _Eventing = require("./Eventing");
+var _Sync = require("./Sync");
+const rootUrl = "http://localhost:3000/users";
+class User {
+  events = new _Eventing.Eventing();
+  sync = new _Sync.Sync(rootUrl);
+}

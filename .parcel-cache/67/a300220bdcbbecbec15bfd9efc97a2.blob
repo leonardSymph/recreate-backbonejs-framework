@@ -1,0 +1,6 @@
+var _axios = require("axios");
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+_axiosDefault.default.get("http://localhost:3000/users").then(response => {
+  console.log(response);
+});

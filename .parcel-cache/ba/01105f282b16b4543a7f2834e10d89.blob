@@ -1,0 +1,47 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "UserForm", function () {
+  return UserForm;
+});
+class UserForm {
+  constructor(parent, model) {
+    this.parent = parent;
+    this.model = model;
+  }
+  eventsMap() {
+    return {
+      "click:.set-age": this.onSetAgeClick
+    };
+  }
+  onSetAgeClick = () => {
+    console.log(this.model.setRandomAge);
+  };
+  template() {
+    return `
+      <div>
+        <h1>User Form</h1>
+        <div>User name: ${this.model.get("name")}</div>
+        <div>User age: ${this.model.get("age")}</div>
+        <input />
+        <button>Click me</button>
+        <button class="set-age">Set Random Age</button>
+      </div>
+    `;
+  }
+  bindEvents(fragment) {
+    const eventsMap = this.eventsMap();
+    for (let eventKey in eventsMap) {
+      const [eventName, selector] = eventKey.split(":");
+      console.log(eventName, selector);
+      fragment.querySelectorAll(selector).forEach(element => {
+        element.addEventListener(eventName, eventsMap[eventKey]);
+      });
+    }
+  }
+  render() {
+    const templateElement = document.createElement("template");
+    templateElement.innerHTML = this.template();
+    this.bindEvents(templateElement.content);
+    this.parent.append(templateElement.content);
+  }
+}

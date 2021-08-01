@@ -1,0 +1,14 @@
+var _modelsUser = require("./models/User");
+var _viewsUserEdit = require("./views/UserEdit");
+const user = _modelsUser.User.buildUser({
+  name: "NAME",
+  age: 20
+});
+const root = document.getElementById("root");
+if (root) {
+  const userEdit = new _viewsUserEdit.UserEdit(root, user);
+  userEdit.render();
+  console.log(userEdit);
+} else {
+  throw new Error("Root element cannot be found");
+}
