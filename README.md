@@ -4,6 +4,8 @@ Using TypeScript and the OOP classes concept of inheritance and composition
 
 did events mapping design-pattern concept to pair up keys with events
 
+what I wanted to re-create: https://backbonejs.org/
+
 # install
 
 only used json-server for simple db-sample
