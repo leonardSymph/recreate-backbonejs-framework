@@ -10,6 +10,7 @@ only used json-server for simple db-sample
 and parcel for bundling
 
 ```
+npm install
 npm install -g parcel-bundler
 npm install json-server
 ```
