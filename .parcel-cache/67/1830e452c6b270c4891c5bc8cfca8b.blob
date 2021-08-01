@@ -1,8 +1,0 @@
-var _axios = require('axios');
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-var _axiosDefault = _parcelHelpers.interopDefault(_axios);
-// const user = new User({ id: 1 })
-_axiosDefault.default.post(`http://localhost:3000/users`, {
-  name: 'myname',
-  age: 20
-});

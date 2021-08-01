@@ -1,8 +1,0 @@
-var _modelsUser = require('./models/User');
-const user = new _modelsUser.User({
-  id: 2,
-  name: 'new record',
-  age: 20
-});
-user.save();
-user.fetch();

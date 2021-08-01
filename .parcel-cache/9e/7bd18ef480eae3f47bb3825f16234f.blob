@@ -1,8 +1,0 @@
-var _modelsUser = require("./models/User");
-const user = new _modelsUser.User({
-  name: 'myname',
-  age: 20
-});
-user.on('change', () => {});
-user.on('change', () => {});
-console.log(user);

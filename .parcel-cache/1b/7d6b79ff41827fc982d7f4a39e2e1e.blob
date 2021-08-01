@@ -1,9 +1,0 @@
-var _modelsCollection = require("./models/Collection");
-var _modelsUser = require("./models/User");
-const collection = new _modelsCollection.Collection("http://localhost:3000/users", UserProps => {
-  return _modelsUser.User.buildUser(UserProps);
-});
-collection.events.on("change", () => {
-  console.log(collection);
-});
-collection.fetch();
